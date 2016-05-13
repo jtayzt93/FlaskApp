@@ -1,0 +1,29 @@
+
+{% extends "index.html" %}
+{% block content%}
+{% from "_formhelpers.html" import render_field %}
+<form method=post action="/predictionresults">
+<dl>
+    {{ render_field(form.MONTH) }}
+    {{ render_field(form.DAY_OF_WEEK) }}
+    {{ render_field(form.CARRIER) }}
+    {{ render_field(form.FL_NUM) }}
+    {{ render_field(form.ORIGIN) }}
+      {{ render_field(form.DEST) }}
+</dl>
+<p><input type=submit value='Predict Flight Delay Now'r>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

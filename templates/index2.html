@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Delay Away</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    
+
+    <!-- Custom CSS -->
+    <link href="static/css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.static/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+            </li>
+            <li>
+                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Delay Away</h1>
+            <h3>Don't Waste Time Being Delayed, Check Your Flight Now:</h3>
+            <br>
+            
+ <form class="form-horizontal" name="flightform" action="/results" method="post" >
+<fieldset>
+
+
+
+<!-- Select Basic -->
+
+<div class="form-group">
+        <div id='custom-templates'>
+        <label class="col-md-4 control-label" for="ORIGIN">Origin</label>
+        <div class="col-md-4">
+        <div id="customtemplate">
+            <span class="twitter-typeahead" style="width:100%; position: relative; display: inline-block;">
+            <input id="twitter-typeahead-origin" name= "ORIGIN" type="text" class="form-control" autocomplete="off" required>
+            
+            </div>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+        <div id='custom-templates'>
+        <label class="col-md-4 control-label" for="DEST">Destination</label>
+        <div class="col-md-4">
+        <div id="customtemplate">
+            <span class="twitter-typeahead" style="width:100%; position: relative; display: inline-block;">
+            <input id="twitter-typeahead-dest" name="DEST" type="text" class="form-control" autocomplete="off" required >
+            </div>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+    <label class="col-md-4 control-label" for="Date">Date</label>
+        <div class="col-md-4">
+            <div class="input-group date" data-provide="datepicker">
+                <input type="text" class="form-control" autoclose="true" name="Date" required>
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+            </div>
+        </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="FL_NUM">Flight Number</label>
+  <div class="col-md-4">
+    <input id="FL_NUM" name="FL_NUM" type="search" class="form-control input-md" style="color: black;" required>
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="UNIQUE_CARRIER_CODE">Carrier</label>
+  <div class="col-md-4">
+    <select id="UNIQUE_CARRIER_CODE" name="CARRIER" class="form-control" required>
+    <option disabled selected value></option>
+      <option value="AA">[AA] American Airlines</option>
+      <option value="AS">[AS] Alaska Airlines</option>
+      <option value="DL">[DL] Delta Airlines</option>
+      <option value="F9">[F9] Frontier Airlines</option>
+      <option value="NK">[NK] Spirit Airlines</option>
+      <option value="B6">[B6] JetBlue</option>
+    <option value="WN">[WN] Southwest Airlines</option>
+      <option value="UA">[UA] United Airlines</option>
+        
+      
+    </select>
+  </div>
+</div>
+
+
+</fieldset>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br></br>
+<br></br>
+<a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+
+        </div>
+    </header>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Our Services</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Vertically Centered Text</h1>
+        </div>
+    </aside>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Our Work</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <a href="#">
+                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                    <a href="#" class="btn btn-dark">View More Items</a>
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>The buttons below are impossible to resist.</h3>
+                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
+                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <br />
+        <small>
+            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+        </small>
+        </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Start Bootstrap</strong>
+                    </h4>
+                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <script src='static/js/datepickerlatest.js'</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src='https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js'></script>
+
+    
+
+
+
+
+    <!-- Custom Theme JavaScript -->
+    <script type="text/javascript">
+
+    var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+    };
+    };
+
+    var states = ['JFK - John F Kennedy International Airport - New York, NY', 'LAX - Los Angeles International Airport - Los Angeles, CA', 'DFW - Dallas/Fort Worth International Airport - Dallas/Fort Worth, TX', 'OGG - Kahului Airport - Kahului, HI', 'HNL - Honolulu International Airport - Honolulu, HI', 'SFO - San Francisco International Airport - San Francisco, CA', 'ATL - Hartsfield - Jackson Atlanta International Airport - Atlanta, GA', 'LAS - Mc Carran International Airport - Las Vegas, NV', 'BOS - General Edward Lawrence Logan International Airport - Boston, MA', "ORD - Chicago O'Hare International Airport - Chicago, IL", 'OKC - Will Rogers World Airport - Oklahoma City, OK', 'ONT - Ontario International Airport - Ontario, CA', 'DCA - Ronald Reagan Washington National Airport - Washington, DC', 'MIA - Miami International Airport - Miami, FL', 'IAD - Washington Dulles International Airport - Washington, DC', 'JAX - Jacksonville International Airport - Jacksonville, FL', 'MSY - Louis Armstrong New Orleans International Airport - New Orleans, LA', 'PHX - Phoenix Sky Harbor International Airport - Phoenix, AZ', 'MCO - Orlando International Airport - Orlando, FL', 'PHL - Philadelphia International Airport - Philadelphia, PA', 'SAN - San Diego International Airport - San Diego, CA', 'SEA - Seattle-Tacoma International Airport - Seattle, WA', 'DTW - Detroit Metropolitan Wayne County Airport - Detroit, MI', 'SJC - San Jose International Airport - San Jose, CA', 'SLC - Salt Lake City International Airport - Salt Lake City, UT', 'KOA - Kona International Airport - Kona, HI', 'SJU - Luis Munoz Marin International Airport - San Juan, PR', 'LGA - La Guardia Airport - New York, NY', 'JAC - Jackson Hole Airport - Jackson, WY', 'STL - Lambert\xe2\x80\x93St. Louis International Airport - St. Louis, MO', 'RDU - Raleigh-Durham International Airport - Raleigh/Durham, NC', 'HOU - William P Hobby Airport - Houston, TX', 'TUS - Tucson International Airport - Tucson, AZ', 'PDX - Portland International Airport - Portland, OR', 'IAH - George Bush Intercontinental/Houston Airport - Houston, TX', 'SNA - John Wayne-Orange County Airport - Santa Ana, CA', 'DEN - Denver International Airport - Denver, CO', 'BWI - Baltimore-Washington International Airport - Baltimore, MD', 'SAT - San Antonio International Airport - San Antonio, TX', 'MKE - General Mitchell International Airport - Milwaukee, WI', 'CLT - Charlotte/Douglas International Airport - Charlotte, NC', 'RSW - Southwest Florida International Airport - Fort Myers, FL', 'LBB - Lubbock International Airport - Lubbock, TX', 'TPA - Tampa International Airport - Tampa, FL', 'BNA - Nashville International Airport - Nashville, TN', 'LIH - Lihue Airport - Lihue, HI', 'SMF - Sacramento International Airport - Sacramento, CA', 'MCI - Kansas City International Airport - Kansas City, MO', 'AUS - Austin-Bergstrom International Airport - Austin, TX', 'ORF - Norfolk International Airport - Norfolk, VA', 'EWR - Newark International Airport - Newark, NJ', 'IND - Indianapolis International Airport - Indianapolis, IN', 'MFE - McAllen Miller International Airport - Mission/McAllen/Edinburg, TX', 'FLL - Fort Lauderdale-Hollywood International Airport - Fort Lauderdale, FL', 'PNS - Pensacola Regional Airport - Pensacola, FL', 'EGE - Eagle County Regional Airport - Eagle, CO', 'BHM - Birmingham-Shuttlesworth International Airport - Birmingham, AL', 'DAY - James M Cox Dayton International Airport - Dayton, OH', 'BDL - Bradley International Airport - Hartford, CT', 'PBI - Palm Beach International - West Palm Beach/Palm Beach, FL', 'ABQ - Albuquerque International Airport - Albuquerque, NM', 'STT - Cyril E. King Airport - Charlotte Amalie, VI', 'MSP - Minneapolis-Saint Paul International Airport - Minneapolis, MN', 'PSP - Palm Springs International Airport - Palm Springs, CA', 'OMA - Eppley Airfield - Omaha, NE', 'TUL - Tulsa International Airport - Tulsa, OK', 'ELP - El Paso International Airport - El Paso, TX', 'COS - Colorado Springs Airport - Colorado Springs, CO', 'PIT - Pittsburgh International Airport - Pittsburgh, PA', 'GUC - Gunnison County Airport - Gunnison, CO', 'ICT - Wichita Mid-Continent Airport - Wichita, KS', 'RNO - Reno/Tahoe International Airport - Reno, NV', 'DSM - Des Moines International Airport - Des Moines, IA', 'FAT - Fresno Air Terminal Airport - Fresno, CA', 'SDF - Standiford Field - Louisville, KY', 'STX - Henry E Rohlsen Airport - Christiansted, VI', 'CLE - Cleveland-Hopkins International Airport - Cleveland, OH', 'MEM - Memphis International Airport - Memphis, TN', 'RIC - Richmond International Airport - Richmond, VA', 'HDN - Yampa Valley Airport - Hayden, CO', 'MTJ - Montrose Regional Airport - Montrose/Delta, CO', 'CMH - Port Columbus International Airport - Columbus, OH', 'ANC - Anchorage International Airport - Anchorage, AK', 'SCC - Deadhorse Airport - Deadhorse, AK', 'FAI - Fairbanks International Airport - Fairbanks, AK', 'BRW - Wiley Post-Will Rogers Memorial Airport - Barrow, AK', 'JNU - Juneau International Airport - Juneau, AK', 'KTN - Ketchikan International Airport - Ketchikan, AK', 'YAK - Yakutat Airport - Yakutat, AK', 'CDV - Merle K. (Mudhole) Smith Airport - Cordova, AK', 'SIT - Sitka Rocky Gutierrez Airport - Sitka, AK', 'PSG - Petersburg Seaplane Base - Petersburg, AK', 'WRG - Wrangell Airport - Wrangell, AK', 'OME - Nome Airport - Nome, AK', 'OTZ - Ralph Wien Memorial Airport - Kotzebue, AK', 'ADK - Adak Airport - Adak Island, AK', 'OAK - Metropolitan Oakland International Airport - Oakland, CA', 'BUR - Bob Hope Airport - Burbank, CA', 'BLI - Bellingham International Airport - Bellingham, WA', 'GEG - Spokane International Airport - Spokane, WA', 'ADQ - Kodiak Airport - Kodiak, AK', 'BET - Bethel Airport - Bethel, AK', 'SRQ - Sarasota / Bradenton International Airport - Sarasota/Bradenton, FL', 'BUF - Greater Buffalo International Airport - Buffalo, NY', 'HPN - Westchester County Airport - White Plains, NY', 'SYR - Syracuse Hancock International Airport - Syracuse, NY', 'LGB - Long Beach Airport (Daugherty Field) - Long Beach, CA', 'BTV - Burlington International Airport - Burlington, VT', 'SAV - Savannah International Airport - Savannah, GA', 'PWM - Portland International Jetport - Portland, ME', 'CHS - Charleston International Airport - Charleston, SC', 'ROC - Greater Rochester International Airport - Rochester, NY', 'SWF - Stewart International Airport - Newburgh/Poughkeepsie, NY', 'PVD - Theodore Francis Green State Airport - Providence, RI', 'PSE - Mercedita Airport - Ponce, PR', 'BQN - Rafael Hernandez Airport - Aguadilla, PR', 'ORH - Worcester, Worcester Regional Airport - Worcester, MA', 'EVV - Evansville Regional Airport - Evansville, IN', 'CAE - Columbia Metropolitan Airport - Columbia, SC', 'CVG - Cincinnati-Northern Kentucky International Airport - Cincinnati, OH', 'AGS - Augusta Regional Airport - Augusta, GA', 'SGF - Springfield-Branson National Airport - Springfield, MO', 'VPS - Valparaiso / Eglin Air Force Base - Valparaiso, FL', 'MLB - Melbourne International Airport - Melbourne, FL', 'DAL - Dallas Love Field - Dallas, TX', 'MDT - Harrisburg International Airport - Harrisburg, PA', 'AVL - Asheville Regional Airport - Asheville, NC', 'GRR - Gerald R. Ford International Airport - Grand Rapids, MI', 'MDW - Chicago Midway Airport - Chicago, IL', 'ALB - Albany County Airport - Albany, NY', 'TYS - McGhee Tyson Airport - Knoxville, TN', 'JAN - Jackson-Evers International Airport - Jackson/Vicksburg, MS', 'FNT - Bishop International Airport - Flint, MI', 'FSD - Joe Foss Field - Sioux Falls, SD', 'HSV - Huntsville International Airport-Carl T Jones Field - Huntsville, AL', 'GPT - Gulfport-Biloxi Regional Airport - Gulfport/Biloxi, MS', 'TLH - Tallahassee Regional Airport - Tallahassee, FL', 'CRW - Yeager Airport - Charleston/Dunbar, WV', 'PHF - Newport News-Williamsburg International Airport - Newport News/Williamsburg, VA', 'BOI - Boise Air Terminal - Boise, ID', 'TRI - Tri-Cities Regional Airport - Bristol/Johnson City/Kingsport, TN', 'MSN - Dane County Regional Airport - Madison, WI', 'DAB - Daytona Beach International Airport - Daytona Beach, FL', 'GSP - Greenville-Spartanburg Airport - Greer, SC', 'LEX - Blue Grass Airport - Lexington, KY', 'EYW - Key West International Airport - Key West, FL', 'GSO - Piedmont Triad International Airport - Greensboro/High Point, NC', 'CAK - Akron-Canton Regional Airport - Akron, OH', 'BZN - Gallatin Field Airport - Bozeman, MT', 'MSO - Missoula International Airport - Missoula, MT', 'LFT - Lafayette Regional Airport - Lafayette, LA', 'CHA - Lovell Field - Chattanooga, TN', 'ECP - Northwest Florida Beaches International Airport - Panama City, FL', 'FAY - Fayetteville Municipal Airport - Fayetteville, NC', 'LIT - Adams Field - Little Rock, AR', 'BTR - Baton Rouge Metropolitan Airport - Baton Rouge, LA', 'XNA - Northwest Arkansas Regional Airport - Fayetteville, AR', 'MYR - Myrtle Beach International Airport - Myrtle Beach, SC', 'SHV - Shreveport Regional Airport - Shreveport, LA', 'BIL - Logan International Airport - Billings, MT', 'CHO - Charlottesville-Albemarle Airport - Charlottesville, VA', 'MOB - Mobile Regional Airport - Mobile, AL', 'FAR - Hector International Airport - Fargo, ND', 'PSC - Tri-Cities Airport - Pasco/Kennewick/Richland, WA', 'GRB - Austin Straubel International Airport - Green Bay, WI', 'ROA - Roanoke Regional Airport-Woodrum Field - Roanoke, VA', 'ABE - Lehigh Valley International Airport - Allentown/Bethlehem/Easton, PA', 'ATW - Outagamie County Airport - Appleton, WI', 'MHT - Manchester Airport - Manchester, NH', 'ILM - Wilmington International Airport - Wilmington, NC', 'GNV - Gainesville Regional Airport - Gainesville, FL', 'BIS - Bismarck Municipal Airport - Bismarck/Mandan, ND', 'SJT - Mathis Field - San Angelo, TX', 'LAW - Lawton Municipal Airport - Lawton/Fort Sill, OK', 'SPS - Sheppard Air Force Base/Wichita Falls Municipal Airport - Wichita Falls, TX', 'RAP - Rapid City Regional Airport - Rapid City, SD', 'CRP - Corpus Christi International Airport - Corpus Christi, TX', 'GRK - Fort Hood, Robert Gray AAF Ft Hood - Killeen, TX', 'BPT - Jefferson County Airport - Beaumont/Port Arthur, TX', 'MLU - Monroe Regional Airport - Monroe, LA', 'ACT - Waco Regional Airport - Waco, TX', 'BRO - Brownsville-South Padre Island International Airport - Brownsville, TX', 'TYR - Tyler Pounds Field - Tyler, TX', 'SAF - Santa Fe Municipal Airport - Santa Fe, NM', 'LCH - Lake Charles Regional Airport - Lake Charles, LA', 'LAN - Lansing, Capital City Airport - Lansing, MI', 'TVC - Cherry Capital Airport - Traverse City, MI', 'FSM - Fort Smith Municipal Airport - Fort Smith, AR', 'MEI - Key Field Airport - Meridian, MS', 'PIB - Pine Belt Regional Airport - Hattiesburg/Laurel, MS', 'MOT - Minot International Airport - Minot, ND', 'CLL - Easterwood Field - College Station/Bryan, TX', 'DRO - Durango-La Plata County Airport - Durango, CO', 'AEX - Alexandria International Airport - Alexandria, LA', 'CWA - Central Wisconsin Airport - Mosinee, WI', 'SBN - South Bend Regional Airport - South Bend, IN', 'AMA - Rick Husband Amarillo International Airport - Amarillo, TX', 'GJT - BLM Fire Center Heliport - Grand Junction, CO', 'MLI - Quad City International Airport - Moline, IL', 'LNK - Lincoln Municipal Airport - Lincoln, NE', 'MAF - Midland International Airport - Midland/Odessa, TX', 'PIA - General Downing - Peoria International Airport - Peoria, IL', 'HRL - Rio Grande Valley International Airport - Harlingen/San Benito, TX', 'ISN - Sloulin Field International Airport - Williston, ND', 'LRD - Laredo International Airport - Laredo, TX', 'ERI - Erie International Airport - Erie, PA', 'AVP - Wilkes-Barre/Scranton International Airport - Scranton/Wilkes-Barre, PA', 'HOB - Hobbs Airport - Hobbs, NM', 'ITO - Hilo International Airport - Hilo, HI', 'GUM - Antonio B. Won Pat International Airport - Guam, TT', 'SUN - Friedman Memorial Airport - Sun Valley/Hailey/Ketchum, ID', 'AZO - Kalamazoo-Battle Creek International Airport - Kalamazoo, MI', 'GFK - Grand Forks International Airport - Grand Forks, ND', 'DIK - Dickinson Municipal Airport - Dickinson, ND', 'DLH - Duluth International Airport - Duluth, MN', 'FCA - Glacier Park International Airport - Kalispell, MT', 'ASE - Aspen-Pitkin County Airport-Sardy Field - Aspen, CO', 'MMH - Mammoth Lakes Airport - Mammoth Lakes, CA', 'RDM - Roberts Field-Redmond Municipal Airport - Bend/Redmond, OR', 'ISP - Long Island Mac Arthur Airport - Islip, NY', 'ELM - Elmira-Corning Regional Airport - Elmira/Corning, NY', 'SCE - University Park Airport - State College, PA', 'CID - The Eastern Iowa Airport - Cedar Rapids/Iowa City, IA', 'MBS - MBS International Airport - Saginaw/Bay City/Midland, MI', 'RST - Rochester, Rochester International Airport - Rochester, MN', 'VLD - Valdosta Regional Airport - Valdosta, GA', 'MGM - Dannelly Field - Montgomery, AL', 'GTR - Golden Triangle Regional Airport - Columbus, MS', 'FWA - Fort Wayne International Airport - Fort Wayne, IN', 'BMI - Central Illinois Regional Airport at Bloomington-Normal - Bloomington/Normal, IL', 'EWN - Coastal Carolina Regional Airport - New Bern/Morehead/Beaufort, NC', 'OAJ - Albert J. Ellis Airport - Jacksonville/Camp Lejeune, NC', 'DHN - Dothan Regional Airport - Dothan, AL', 'CSG - Columbus Metropolitan Airport - Columbus, GA', 'ABY - Southwest Georgia Regional Airport - Albany, GA', 'BGR - Bangor International Airport - Bangor, ME', 'BQK - Brunswick Golden Isles Airport - Brunswick, GA', 'TTN - Trenton Mercer Airport - Trenton, NJ', 'UST - St Augustine Airport - St. Augustine, FL', 'ILG - New Castle Airport - Wilmington, DE', 'PPG - Pago Pago International Airport - Pago Pago, TT', 'GRI - Central Nebraska Regional Airport - Grand Island, NE', 'MHK - Manhattan Regional Airport - Manhattan/Ft. Riley, KS', 'ALO - Waterloo Municipal Airport - Waterloo, IA', 'GGG - Gregg County Airport - Longview, TX', 'DBQ - Dubuque Regional Airport - Dubuque, IA', 'ROW - Roswell Industrial Air Center Airport - Roswell, NM', 'LSE - La Crosse Municipal Airport - La Crosse, WI', 'CMI - University of Illinois Willard Airport - Champaign/Urbana, IL', 'SPI - Abraham Lincoln Capital Airport - Springfield, IL', 'ABI - Abilene Regional Airport - Abilene, TX', 'JLN - Joplin Regional Airport - Joplin, MO', 'GCK - Garden City Regional Airport - Garden City, KS', 'COU - Columbia Regional Airport - Columbia, MO', 'MQT - Sawyer International Airport - Marquette, MI', 'TXK - Texarkana Regional Airport - Texarkana, AR', 'SUX - Sioux Gateway Airport/Col. Bud Day Field - Sioux City, IA', 'TOL - Toledo Express Airport - Toledo, OH', 'ACY - Atlantic City International Airport - Atlantic City, NJ', 'LBE - Arnold Palmer Regional Airport - Latrobe, PA', 'IAG - Niagara Falls International Airport - Niagara Falls, NY', 'PBG - Plattsburgh Air Force Base - Plattsburgh, NY', 'YUM - Yuma International Airport - Yuma, AZ', 'FLG - Flagstaff Pulliam Airport - Flagstaff, AZ', 'SBP - San Luis Obispo County Airport - San Luis Obispo, CA', 'SBA - Santa Barbara Municipal Airport - Santa Barbara, CA', 'BFL - Meadows Field - Bakersfield, CA', 'MRY - Monterey Peninsula Airport - Monterey, CA', 'IDA - Fanning Field - Idaho Falls, ID', 'CPR - Natrona County International Airport - Casper, WY', 'VEL - Vernal Airport - Vernal, UT', 'ESC - Delta County Airport - Escanaba, MI', 'HIB - Range Regional Airport - Hibbing, MN', 'INL - Falls International Airport - International Falls, MN', 'EUG - Mahlon Sweet Field Airport - Eugene, OR', 'ACV - Arcata-Eureka Airport - Arcata/Eureka, CA', 'HLN - Helena Regional Airport - Helena, MT', 'CLD - McClellan-Palomar Airport - Carlsbad, CA', 'RKS - Rock Springs-Sweetwater County Airport - Rock Springs, WY', 'TWF - Twin Falls Airport - Twin Falls, ID', 'GTF - Great Falls International Airport - Great Falls, MT', 'SGU - Saint George Municipal Airport - St. George, UT', 'PLN - Pellston Regional Airport of Emmet County - Pellston, MI', 'EKO - Elko Regional Airport - Elko, NV', 'GCC - Gillette-Campbell County Airport - Gillette, WY', 'IMT - Ford Airport - Iron Mountain/Kingsfd, MI', 'RHI - Rhinelander-Oneida County Airport - Rhinelander, WI', 'BRD - Brainerd-Crow Wing County Regional Airport - Brainerd, MN', 'PIH - Pocatello Regional Airport - Pocatello, ID', 'LWS - Lewiston \xe2\x80\x93 Nez Perce County Airport - Lewiston, ID', 'CIU - Chippewa County International Airport - Sault Ste. Marie, MI', 'MFR - Rogue Valley International - Medford Airport - Medford, OR', 'CMX - Houghton County Memorial Airport - Hancock/Houghton, MI', 'SMX - Santa Maria Airport - Santa Maria, CA', 'MKG - Muskegon County Airport - Muskegon, MI', 'DVL - Devils Lake Municipal Airport - Devils Lake, ND', 'JMS - Jamestown Municipal Airport - Jamestown, ND', 'PUB - Pueblo Memorial Airport - Pueblo, CO', 'OTH - Southwest Oregon Regional Airport - North Bend/Coos Bay, OR', 'EAU - Chippewa Valley Regional Airport - Eau Claire, WI', 'PAH - Barkley Regional Airport - Paducah, KY', 'CEC - Jack Mc Namara Field Airport - Crescent City, CA', 'HYS - Hays Municipal Airport - Hays, KS', 'LAR - Laramie Regional Airport - Laramie, WY', 'RDD - Redding Municipal Airport - Redding, CA', 'COD - Yellowstone Regional Airport - Cody, WY', 'CNY - Canyonlands Field - Moab, UT', 'ABR - Aberdeen Regional Airport - Aberdeen, SD', 'APN - Alpena County Regional Airport - Alpena, MI', 'BJI - Bemidji-Beltrami County Airport - Bemidji, MN', 'BTM - Bert Mooney Airport - Butte, MT', 'CDC - Cedar City Regional Airport - Cedar City, UT', 'ITH - Ithaca Tompkins Regional Airport - Ithaca/Cortland, NY', 'BGM - Binghamton Regional Airport-Edwin A Link Field - Binghamton, NY', 'STC - St. Cloud Regional Airport - St. Cloud, MN', 'GST - Gustavus Airport - Gustavus, AK', 'AKN - King Salmon Airport - King Salmon, AK', 'DLG - Dillingham Airport - Dillingham, AK', 'HYA - Barnstable Municipal Airport-Boardman/Polando Field - Hyannis, MA', 'ACK - Nantucket Memorial Airport - Nantucket, MA', "MVY - Martha's Vineyard Airport - Martha's Vineyard, MA", 'FOE - Forbes Field Airport - Topeka, KS', 'BKG - Branson Airport - Branson, MO', 'CIC - Chico Municipal Airport - Chico, CA', 'WYS - Yellowstone Airport - West Yellowstone, MT', 'ART - Watertown International Airport - Watertown, NY', 'LMT - Klamath Falls Airport - Klamath Falls, OR', 'MOD - Modesto City-County Airport - Modesto, CA', 'MCN - Middle Georgia Regional Airport - Macon, GA', 'SPN - Francisco C. Ada International Airport - Saipan, TT', 'DRT - Del Rio International Airport - Del Rio, TX', 'SHD - Shenandoah Valley Regional Airport - Staunton, VA', 'AZA - Phoenix-Mesa Gateway Airport - Phoenix, AZ', 'RFD - Chicago/Rockford International Airport - Rockford, IL', 'IYK - Inyokern Airport - Inyokern, CA', 'IPL - Imperial County Airport - El Centro, CA']
+;
+
+    $('#twitter-typeahead-origin').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+    },
+    {
+  name: 'states',
+  source: substringMatcher(states)
+  });
+
+
+        $('#twitter-typeahead-origin').on('keydown', function(event) {
+            // Define tab key
+            var e = jQuery.Event("keydown");
+            e.keyCode = e.which = 9; // 9 == tab
+
+            if (event.which == 13) // if pressing enter
+                $('#twitter-typeahead-origin').trigger(e); // trigger "tab" key - which works as "enter"
+        });
+    </script>
+
+    <script type="text/javascript">
+
+    var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+    };
+    };
+
+    var states = ['JFK - John F Kennedy International Airport - New York, NY', 'LAX - Los Angeles International Airport - Los Angeles, CA', 'DFW - Dallas/Fort Worth International Airport - Dallas/Fort Worth, TX', 'OGG - Kahului Airport - Kahului, HI', 'HNL - Honolulu International Airport - Honolulu, HI', 'SFO - San Francisco International Airport - San Francisco, CA', 'ATL - Hartsfield - Jackson Atlanta International Airport - Atlanta, GA', 'LAS - Mc Carran International Airport - Las Vegas, NV', 'BOS - General Edward Lawrence Logan International Airport - Boston, MA', "ORD - Chicago O'Hare International Airport - Chicago, IL", 'OKC - Will Rogers World Airport - Oklahoma City, OK', 'ONT - Ontario International Airport - Ontario, CA', 'DCA - Ronald Reagan Washington National Airport - Washington, DC', 'MIA - Miami International Airport - Miami, FL', 'IAD - Washington Dulles International Airport - Washington, DC', 'JAX - Jacksonville International Airport - Jacksonville, FL', 'MSY - Louis Armstrong New Orleans International Airport - New Orleans, LA', 'PHX - Phoenix Sky Harbor International Airport - Phoenix, AZ', 'MCO - Orlando International Airport - Orlando, FL', 'PHL - Philadelphia International Airport - Philadelphia, PA', 'SAN - San Diego International Airport - San Diego, CA', 'SEA - Seattle-Tacoma International Airport - Seattle, WA', 'DTW - Detroit Metropolitan Wayne County Airport - Detroit, MI', 'SJC - San Jose International Airport - San Jose, CA', 'SLC - Salt Lake City International Airport - Salt Lake City, UT', 'KOA - Kona International Airport - Kona, HI', 'SJU - Luis Munoz Marin International Airport - San Juan, PR', 'LGA - La Guardia Airport - New York, NY', 'JAC - Jackson Hole Airport - Jackson, WY', 'STL - Lambert\xe2\x80\x93St. Louis International Airport - St. Louis, MO', 'RDU - Raleigh-Durham International Airport - Raleigh/Durham, NC', 'HOU - William P Hobby Airport - Houston, TX', 'TUS - Tucson International Airport - Tucson, AZ', 'PDX - Portland International Airport - Portland, OR', 'IAH - George Bush Intercontinental/Houston Airport - Houston, TX', 'SNA - John Wayne-Orange County Airport - Santa Ana, CA', 'DEN - Denver International Airport - Denver, CO', 'BWI - Baltimore-Washington International Airport - Baltimore, MD', 'SAT - San Antonio International Airport - San Antonio, TX', 'MKE - General Mitchell International Airport - Milwaukee, WI', 'CLT - Charlotte/Douglas International Airport - Charlotte, NC', 'RSW - Southwest Florida International Airport - Fort Myers, FL', 'LBB - Lubbock International Airport - Lubbock, TX', 'TPA - Tampa International Airport - Tampa, FL', 'BNA - Nashville International Airport - Nashville, TN', 'LIH - Lihue Airport - Lihue, HI', 'SMF - Sacramento International Airport - Sacramento, CA', 'MCI - Kansas City International Airport - Kansas City, MO', 'AUS - Austin-Bergstrom International Airport - Austin, TX', 'ORF - Norfolk International Airport - Norfolk, VA', 'EWR - Newark International Airport - Newark, NJ', 'IND - Indianapolis International Airport - Indianapolis, IN', 'MFE - McAllen Miller International Airport - Mission/McAllen/Edinburg, TX', 'FLL - Fort Lauderdale-Hollywood International Airport - Fort Lauderdale, FL', 'PNS - Pensacola Regional Airport - Pensacola, FL', 'EGE - Eagle County Regional Airport - Eagle, CO', 'BHM - Birmingham-Shuttlesworth International Airport - Birmingham, AL', 'DAY - James M Cox Dayton International Airport - Dayton, OH', 'BDL - Bradley International Airport - Hartford, CT', 'PBI - Palm Beach International - West Palm Beach/Palm Beach, FL', 'ABQ - Albuquerque International Airport - Albuquerque, NM', 'STT - Cyril E. King Airport - Charlotte Amalie, VI', 'MSP - Minneapolis-Saint Paul International Airport - Minneapolis, MN', 'PSP - Palm Springs International Airport - Palm Springs, CA', 'OMA - Eppley Airfield - Omaha, NE', 'TUL - Tulsa International Airport - Tulsa, OK', 'ELP - El Paso International Airport - El Paso, TX', 'COS - Colorado Springs Airport - Colorado Springs, CO', 'PIT - Pittsburgh International Airport - Pittsburgh, PA', 'GUC - Gunnison County Airport - Gunnison, CO', 'ICT - Wichita Mid-Continent Airport - Wichita, KS', 'RNO - Reno/Tahoe International Airport - Reno, NV', 'DSM - Des Moines International Airport - Des Moines, IA', 'FAT - Fresno Air Terminal Airport - Fresno, CA', 'SDF - Standiford Field - Louisville, KY', 'STX - Henry E Rohlsen Airport - Christiansted, VI', 'CLE - Cleveland-Hopkins International Airport - Cleveland, OH', 'MEM - Memphis International Airport - Memphis, TN', 'RIC - Richmond International Airport - Richmond, VA', 'HDN - Yampa Valley Airport - Hayden, CO', 'MTJ - Montrose Regional Airport - Montrose/Delta, CO', 'CMH - Port Columbus International Airport - Columbus, OH', 'ANC - Anchorage International Airport - Anchorage, AK', 'SCC - Deadhorse Airport - Deadhorse, AK', 'FAI - Fairbanks International Airport - Fairbanks, AK', 'BRW - Wiley Post-Will Rogers Memorial Airport - Barrow, AK', 'JNU - Juneau International Airport - Juneau, AK', 'KTN - Ketchikan International Airport - Ketchikan, AK', 'YAK - Yakutat Airport - Yakutat, AK', 'CDV - Merle K. (Mudhole) Smith Airport - Cordova, AK', 'SIT - Sitka Rocky Gutierrez Airport - Sitka, AK', 'PSG - Petersburg Seaplane Base - Petersburg, AK', 'WRG - Wrangell Airport - Wrangell, AK', 'OME - Nome Airport - Nome, AK', 'OTZ - Ralph Wien Memorial Airport - Kotzebue, AK', 'ADK - Adak Airport - Adak Island, AK', 'OAK - Metropolitan Oakland International Airport - Oakland, CA', 'BUR - Bob Hope Airport - Burbank, CA', 'BLI - Bellingham International Airport - Bellingham, WA', 'GEG - Spokane International Airport - Spokane, WA', 'ADQ - Kodiak Airport - Kodiak, AK', 'BET - Bethel Airport - Bethel, AK', 'SRQ - Sarasota / Bradenton International Airport - Sarasota/Bradenton, FL', 'BUF - Greater Buffalo International Airport - Buffalo, NY', 'HPN - Westchester County Airport - White Plains, NY', 'SYR - Syracuse Hancock International Airport - Syracuse, NY', 'LGB - Long Beach Airport (Daugherty Field) - Long Beach, CA', 'BTV - Burlington International Airport - Burlington, VT', 'SAV - Savannah International Airport - Savannah, GA', 'PWM - Portland International Jetport - Portland, ME', 'CHS - Charleston International Airport - Charleston, SC', 'ROC - Greater Rochester International Airport - Rochester, NY', 'SWF - Stewart International Airport - Newburgh/Poughkeepsie, NY', 'PVD - Theodore Francis Green State Airport - Providence, RI', 'PSE - Mercedita Airport - Ponce, PR', 'BQN - Rafael Hernandez Airport - Aguadilla, PR', 'ORH - Worcester, Worcester Regional Airport - Worcester, MA', 'EVV - Evansville Regional Airport - Evansville, IN', 'CAE - Columbia Metropolitan Airport - Columbia, SC', 'CVG - Cincinnati-Northern Kentucky International Airport - Cincinnati, OH', 'AGS - Augusta Regional Airport - Augusta, GA', 'SGF - Springfield-Branson National Airport - Springfield, MO', 'VPS - Valparaiso / Eglin Air Force Base - Valparaiso, FL', 'MLB - Melbourne International Airport - Melbourne, FL', 'DAL - Dallas Love Field - Dallas, TX', 'MDT - Harrisburg International Airport - Harrisburg, PA', 'AVL - Asheville Regional Airport - Asheville, NC', 'GRR - Gerald R. Ford International Airport - Grand Rapids, MI', 'MDW - Chicago Midway Airport - Chicago, IL', 'ALB - Albany County Airport - Albany, NY', 'TYS - McGhee Tyson Airport - Knoxville, TN', 'JAN - Jackson-Evers International Airport - Jackson/Vicksburg, MS', 'FNT - Bishop International Airport - Flint, MI', 'FSD - Joe Foss Field - Sioux Falls, SD', 'HSV - Huntsville International Airport-Carl T Jones Field - Huntsville, AL', 'GPT - Gulfport-Biloxi Regional Airport - Gulfport/Biloxi, MS', 'TLH - Tallahassee Regional Airport - Tallahassee, FL', 'CRW - Yeager Airport - Charleston/Dunbar, WV', 'PHF - Newport News-Williamsburg International Airport - Newport News/Williamsburg, VA', 'BOI - Boise Air Terminal - Boise, ID', 'TRI - Tri-Cities Regional Airport - Bristol/Johnson City/Kingsport, TN', 'MSN - Dane County Regional Airport - Madison, WI', 'DAB - Daytona Beach International Airport - Daytona Beach, FL', 'GSP - Greenville-Spartanburg Airport - Greer, SC', 'LEX - Blue Grass Airport - Lexington, KY', 'EYW - Key West International Airport - Key West, FL', 'GSO - Piedmont Triad International Airport - Greensboro/High Point, NC', 'CAK - Akron-Canton Regional Airport - Akron, OH', 'BZN - Gallatin Field Airport - Bozeman, MT', 'MSO - Missoula International Airport - Missoula, MT', 'LFT - Lafayette Regional Airport - Lafayette, LA', 'CHA - Lovell Field - Chattanooga, TN', 'ECP - Northwest Florida Beaches International Airport - Panama City, FL', 'FAY - Fayetteville Municipal Airport - Fayetteville, NC', 'LIT - Adams Field - Little Rock, AR', 'BTR - Baton Rouge Metropolitan Airport - Baton Rouge, LA', 'XNA - Northwest Arkansas Regional Airport - Fayetteville, AR', 'MYR - Myrtle Beach International Airport - Myrtle Beach, SC', 'SHV - Shreveport Regional Airport - Shreveport, LA', 'BIL - Logan International Airport - Billings, MT', 'CHO - Charlottesville-Albemarle Airport - Charlottesville, VA', 'MOB - Mobile Regional Airport - Mobile, AL', 'FAR - Hector International Airport - Fargo, ND', 'PSC - Tri-Cities Airport - Pasco/Kennewick/Richland, WA', 'GRB - Austin Straubel International Airport - Green Bay, WI', 'ROA - Roanoke Regional Airport-Woodrum Field - Roanoke, VA', 'ABE - Lehigh Valley International Airport - Allentown/Bethlehem/Easton, PA', 'ATW - Outagamie County Airport - Appleton, WI', 'MHT - Manchester Airport - Manchester, NH', 'ILM - Wilmington International Airport - Wilmington, NC', 'GNV - Gainesville Regional Airport - Gainesville, FL', 'BIS - Bismarck Municipal Airport - Bismarck/Mandan, ND', 'SJT - Mathis Field - San Angelo, TX', 'LAW - Lawton Municipal Airport - Lawton/Fort Sill, OK', 'SPS - Sheppard Air Force Base/Wichita Falls Municipal Airport - Wichita Falls, TX', 'RAP - Rapid City Regional Airport - Rapid City, SD', 'CRP - Corpus Christi International Airport - Corpus Christi, TX', 'GRK - Fort Hood, Robert Gray AAF Ft Hood - Killeen, TX', 'BPT - Jefferson County Airport - Beaumont/Port Arthur, TX', 'MLU - Monroe Regional Airport - Monroe, LA', 'ACT - Waco Regional Airport - Waco, TX', 'BRO - Brownsville-South Padre Island International Airport - Brownsville, TX', 'TYR - Tyler Pounds Field - Tyler, TX', 'SAF - Santa Fe Municipal Airport - Santa Fe, NM', 'LCH - Lake Charles Regional Airport - Lake Charles, LA', 'LAN - Lansing, Capital City Airport - Lansing, MI', 'TVC - Cherry Capital Airport - Traverse City, MI', 'FSM - Fort Smith Municipal Airport - Fort Smith, AR', 'MEI - Key Field Airport - Meridian, MS', 'PIB - Pine Belt Regional Airport - Hattiesburg/Laurel, MS', 'MOT - Minot International Airport - Minot, ND', 'CLL - Easterwood Field - College Station/Bryan, TX', 'DRO - Durango-La Plata County Airport - Durango, CO', 'AEX - Alexandria International Airport - Alexandria, LA', 'CWA - Central Wisconsin Airport - Mosinee, WI', 'SBN - South Bend Regional Airport - South Bend, IN', 'AMA - Rick Husband Amarillo International Airport - Amarillo, TX', 'GJT - BLM Fire Center Heliport - Grand Junction, CO', 'MLI - Quad City International Airport - Moline, IL', 'LNK - Lincoln Municipal Airport - Lincoln, NE', 'MAF - Midland International Airport - Midland/Odessa, TX', 'PIA - General Downing - Peoria International Airport - Peoria, IL', 'HRL - Rio Grande Valley International Airport - Harlingen/San Benito, TX', 'ISN - Sloulin Field International Airport - Williston, ND', 'LRD - Laredo International Airport - Laredo, TX', 'ERI - Erie International Airport - Erie, PA', 'AVP - Wilkes-Barre/Scranton International Airport - Scranton/Wilkes-Barre, PA', 'HOB - Hobbs Airport - Hobbs, NM', 'ITO - Hilo International Airport - Hilo, HI', 'GUM - Antonio B. Won Pat International Airport - Guam, TT', 'SUN - Friedman Memorial Airport - Sun Valley/Hailey/Ketchum, ID', 'AZO - Kalamazoo-Battle Creek International Airport - Kalamazoo, MI', 'GFK - Grand Forks International Airport - Grand Forks, ND', 'DIK - Dickinson Municipal Airport - Dickinson, ND', 'DLH - Duluth International Airport - Duluth, MN', 'FCA - Glacier Park International Airport - Kalispell, MT', 'ASE - Aspen-Pitkin County Airport-Sardy Field - Aspen, CO', 'MMH - Mammoth Lakes Airport - Mammoth Lakes, CA', 'RDM - Roberts Field-Redmond Municipal Airport - Bend/Redmond, OR', 'ISP - Long Island Mac Arthur Airport - Islip, NY', 'ELM - Elmira-Corning Regional Airport - Elmira/Corning, NY', 'SCE - University Park Airport - State College, PA', 'CID - The Eastern Iowa Airport - Cedar Rapids/Iowa City, IA', 'MBS - MBS International Airport - Saginaw/Bay City/Midland, MI', 'RST - Rochester, Rochester International Airport - Rochester, MN', 'VLD - Valdosta Regional Airport - Valdosta, GA', 'MGM - Dannelly Field - Montgomery, AL', 'GTR - Golden Triangle Regional Airport - Columbus, MS', 'FWA - Fort Wayne International Airport - Fort Wayne, IN', 'BMI - Central Illinois Regional Airport at Bloomington-Normal - Bloomington/Normal, IL', 'EWN - Coastal Carolina Regional Airport - New Bern/Morehead/Beaufort, NC', 'OAJ - Albert J. Ellis Airport - Jacksonville/Camp Lejeune, NC', 'DHN - Dothan Regional Airport - Dothan, AL', 'CSG - Columbus Metropolitan Airport - Columbus, GA', 'ABY - Southwest Georgia Regional Airport - Albany, GA', 'BGR - Bangor International Airport - Bangor, ME', 'BQK - Brunswick Golden Isles Airport - Brunswick, GA', 'TTN - Trenton Mercer Airport - Trenton, NJ', 'UST - St Augustine Airport - St. Augustine, FL', 'ILG - New Castle Airport - Wilmington, DE', 'PPG - Pago Pago International Airport - Pago Pago, TT', 'GRI - Central Nebraska Regional Airport - Grand Island, NE', 'MHK - Manhattan Regional Airport - Manhattan/Ft. Riley, KS', 'ALO - Waterloo Municipal Airport - Waterloo, IA', 'GGG - Gregg County Airport - Longview, TX', 'DBQ - Dubuque Regional Airport - Dubuque, IA', 'ROW - Roswell Industrial Air Center Airport - Roswell, NM', 'LSE - La Crosse Municipal Airport - La Crosse, WI', 'CMI - University of Illinois Willard Airport - Champaign/Urbana, IL', 'SPI - Abraham Lincoln Capital Airport - Springfield, IL', 'ABI - Abilene Regional Airport - Abilene, TX', 'JLN - Joplin Regional Airport - Joplin, MO', 'GCK - Garden City Regional Airport - Garden City, KS', 'COU - Columbia Regional Airport - Columbia, MO', 'MQT - Sawyer International Airport - Marquette, MI', 'TXK - Texarkana Regional Airport - Texarkana, AR', 'SUX - Sioux Gateway Airport/Col. Bud Day Field - Sioux City, IA', 'TOL - Toledo Express Airport - Toledo, OH', 'ACY - Atlantic City International Airport - Atlantic City, NJ', 'LBE - Arnold Palmer Regional Airport - Latrobe, PA', 'IAG - Niagara Falls International Airport - Niagara Falls, NY', 'PBG - Plattsburgh Air Force Base - Plattsburgh, NY', 'YUM - Yuma International Airport - Yuma, AZ', 'FLG - Flagstaff Pulliam Airport - Flagstaff, AZ', 'SBP - San Luis Obispo County Airport - San Luis Obispo, CA', 'SBA - Santa Barbara Municipal Airport - Santa Barbara, CA', 'BFL - Meadows Field - Bakersfield, CA', 'MRY - Monterey Peninsula Airport - Monterey, CA', 'IDA - Fanning Field - Idaho Falls, ID', 'CPR - Natrona County International Airport - Casper, WY', 'VEL - Vernal Airport - Vernal, UT', 'ESC - Delta County Airport - Escanaba, MI', 'HIB - Range Regional Airport - Hibbing, MN', 'INL - Falls International Airport - International Falls, MN', 'EUG - Mahlon Sweet Field Airport - Eugene, OR', 'ACV - Arcata-Eureka Airport - Arcata/Eureka, CA', 'HLN - Helena Regional Airport - Helena, MT', 'CLD - McClellan-Palomar Airport - Carlsbad, CA', 'RKS - Rock Springs-Sweetwater County Airport - Rock Springs, WY', 'TWF - Twin Falls Airport - Twin Falls, ID', 'GTF - Great Falls International Airport - Great Falls, MT', 'SGU - Saint George Municipal Airport - St. George, UT', 'PLN - Pellston Regional Airport of Emmet County - Pellston, MI', 'EKO - Elko Regional Airport - Elko, NV', 'GCC - Gillette-Campbell County Airport - Gillette, WY', 'IMT - Ford Airport - Iron Mountain/Kingsfd, MI', 'RHI - Rhinelander-Oneida County Airport - Rhinelander, WI', 'BRD - Brainerd-Crow Wing County Regional Airport - Brainerd, MN', 'PIH - Pocatello Regional Airport - Pocatello, ID', 'LWS - Lewiston \xe2\x80\x93 Nez Perce County Airport - Lewiston, ID', 'CIU - Chippewa County International Airport - Sault Ste. Marie, MI', 'MFR - Rogue Valley International - Medford Airport - Medford, OR', 'CMX - Houghton County Memorial Airport - Hancock/Houghton, MI', 'SMX - Santa Maria Airport - Santa Maria, CA', 'MKG - Muskegon County Airport - Muskegon, MI', 'DVL - Devils Lake Municipal Airport - Devils Lake, ND', 'JMS - Jamestown Municipal Airport - Jamestown, ND', 'PUB - Pueblo Memorial Airport - Pueblo, CO', 'OTH - Southwest Oregon Regional Airport - North Bend/Coos Bay, OR', 'EAU - Chippewa Valley Regional Airport - Eau Claire, WI', 'PAH - Barkley Regional Airport - Paducah, KY', 'CEC - Jack Mc Namara Field Airport - Crescent City, CA', 'HYS - Hays Municipal Airport - Hays, KS', 'LAR - Laramie Regional Airport - Laramie, WY', 'RDD - Redding Municipal Airport - Redding, CA', 'COD - Yellowstone Regional Airport - Cody, WY', 'CNY - Canyonlands Field - Moab, UT', 'ABR - Aberdeen Regional Airport - Aberdeen, SD', 'APN - Alpena County Regional Airport - Alpena, MI', 'BJI - Bemidji-Beltrami County Airport - Bemidji, MN', 'BTM - Bert Mooney Airport - Butte, MT', 'CDC - Cedar City Regional Airport - Cedar City, UT', 'ITH - Ithaca Tompkins Regional Airport - Ithaca/Cortland, NY', 'BGM - Binghamton Regional Airport-Edwin A Link Field - Binghamton, NY', 'STC - St. Cloud Regional Airport - St. Cloud, MN', 'GST - Gustavus Airport - Gustavus, AK', 'AKN - King Salmon Airport - King Salmon, AK', 'DLG - Dillingham Airport - Dillingham, AK', 'HYA - Barnstable Municipal Airport-Boardman/Polando Field - Hyannis, MA', 'ACK - Nantucket Memorial Airport - Nantucket, MA', "MVY - Martha's Vineyard Airport - Martha's Vineyard, MA", 'FOE - Forbes Field Airport - Topeka, KS', 'BKG - Branson Airport - Branson, MO', 'CIC - Chico Municipal Airport - Chico, CA', 'WYS - Yellowstone Airport - West Yellowstone, MT', 'ART - Watertown International Airport - Watertown, NY', 'LMT - Klamath Falls Airport - Klamath Falls, OR', 'MOD - Modesto City-County Airport - Modesto, CA', 'MCN - Middle Georgia Regional Airport - Macon, GA', 'SPN - Francisco C. Ada International Airport - Saipan, TT', 'DRT - Del Rio International Airport - Del Rio, TX', 'SHD - Shenandoah Valley Regional Airport - Staunton, VA', 'AZA - Phoenix-Mesa Gateway Airport - Phoenix, AZ', 'RFD - Chicago/Rockford International Airport - Rockford, IL', 'IYK - Inyokern Airport - Inyokern, CA', 'IPL - Imperial County Airport - El Centro, CA']
+;;
+
+    $('#twitter-typeahead-dest').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+    },
+    {
+  name: 'states',
+  source: substringMatcher(states)
+    });
+
+
+        $('#twitter-typeahead-dest').on('keydown', function(event) {
+            // Define tab key
+            var e = jQuery.Event("keydown");
+            e.keyCode = e.which = 9; // 9 == tab
+
+            if (event.which == 13) // if pressing enter
+                $('#twitter-typeahead-dest').trigger(e); // trigger "tab" key - which works as "enter"
+        });
+
+        
+    </script>
+
+
+
+
+    
+    
+
+    
+ <script src='static/js/datepickerlatest.js'</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+    $('.input-group.date').datepicker({
+    autoclose: true, });
+    
+    </script>
+   
+    
+ <script src='static/js/datepickerlatest.js'</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+
+
+
+</body>
+
+</html>
+
+=
+<link href="static/css/typeahead.css" rel="stylesheet" type="text/css">
+<link href="https://github.com/eternicode/bootstrap-datepicker/blob/master/dist/css/bootstrap-datepicker3.css" type=text/css>
