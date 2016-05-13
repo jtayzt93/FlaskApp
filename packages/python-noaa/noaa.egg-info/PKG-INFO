@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: noaa
+Version: 0.2.1
+Summary: Python Bindings to the NOAA National Digital Forecast Database (NDFD)
+Home-page: https://github.com/rconradharris/python-noaa
+Author: Rick Harris
+Author-email: rconradharris@gmail.com
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2.6

@@ -1,0 +1,234 @@
+#!/usr/bin/python
+# Copyright (c) 2011 Rick Harris
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+#    The above copyright notice and this permission notice shall be included in
+#    all copies or substantial portions of the Software.
+#
+#    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+#    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#    DEALINGS IN THE SOFTWARE.
+
+"""
+Command-line utility for fetching data from NOAA National Digital Forecast
+Database (NDFD).
+"""
+
+import argparse
+import ConfigParser
+import os
+import sys
+
+import noaa
+from noaa import exceptions
+from noaa import forecast
+from noaa import utils
+
+
+def temp_color(temp_f):
+    if temp_f >= 90:
+        return "red"      # hot
+    elif temp_f >= 68:
+        return "yellow"   # warm
+    elif temp_f >= 55:
+        return "default"  # nice
+    elif temp_f >= 32:
+        return "blue"     # cold
+    elif temp_f > 0:
+        return "cyan"     # freezing
+    else:
+        return "magenta"  # below zero
+
+
+def simple_temp_graph(temp, scale=0.5, color=True):
+    value = temp.farenheit
+    char = '+' if value >= 0 else '-'
+    scaled_value = int(abs(value * scale))
+    graph_str = char * scaled_value
+
+    if color:
+        graph_str = utils.colorize(graph_str, temp_color(temp.farenheit))
+
+    return graph_str
+
+
+def format_temp(temp, padding=5, color=True):
+    temp_str = str(temp.value).rjust(padding)
+
+    if color:
+        temp_str = utils.colorize(temp_str, temp_color(temp.farenheit))
+
+    return " ".join([temp_str, temp.unit])
+
+
+def conditions_color(conditions):
+    if 'Sunny' in conditions:
+        return 'yellow'
+    elif 'Rain' in conditions:
+        return 'cyan'
+    elif 'Drizzle' in conditions:
+        return 'green'
+    elif 'Thunderstorms' in conditions:
+        return 'red'
+    elif 'Cold' in conditions:
+        return 'blue'
+    elif 'Snow' in conditions:
+        return 'white'
+    else:
+        return "default"
+
+
+def format_conditions(conditions, padding=30, color=True):
+    conditions_str = conditions.ljust(padding)
+
+    if color:
+        conditions_str = utils.colorize(
+                conditions_str, conditions_color(conditions))
+
+    return conditions_str
+
+
+def config_get_boolean(config, section, option, default=None):
+    try:
+        value = config.getboolean(section, option)
+    except ConfigParser.NoSectionError:
+        value = default
+    except ConfigParser.NoOptionError:
+        value = default
+
+    return value
+
+
+def make_parser():
+    config = ConfigParser.ConfigParser()
+    config.read(os.path.expanduser("~/.noaarc"))
+
+    try:
+        default_location = config.get('default', 'location').split()
+    except ConfigParser.NoSectionError:
+        default_location = None
+    except ConfigParser.NoOptionError:
+        default_location = None
+
+    default_metric = config_get_boolean(
+            config, 'default', 'metric', default=False)
+
+    default_heading = config_get_boolean(
+            config, 'default', 'heading', default=True)
+
+    default_color = config_get_boolean(
+            config, 'default', 'color', default=False)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('location',
+                        nargs="*",
+                        default=default_location)
+    parser.add_argument('--metric',
+                        action="store_true",
+                        default=default_metric,
+                        help="use Celsius for temperatures.")
+    parser.add_argument('--imperial',
+                        action="store_false",
+                        dest="metric",
+                        help="use Celsius for temperatures.")
+    parser.add_argument('--heading',
+                        action="store_true",
+                        dest='heading',
+                        default=default_heading,
+                        help="display location heading.")
+    parser.add_argument('--no-heading',
+                        action="store_false",
+                        dest='heading',
+                        help="don't display location heading.")
+    parser.add_argument('--color',
+                        action="store_true",
+                        default=default_color,
+                        help="colorize results.")
+    parser.add_argument('--no-color',
+                        action="store_false",
+                        dest="color",
+                        help="don't colorize results.")
+    parser.add_argument('--version', action='version',
+                        version='%(prog)s ' + noaa.__version__)
+    return parser
+
+
+def daily_forecast_by_location(args):
+    location = " ".join(args.location)
+
+    pretty_location, fcast = forecast.daily_forecast_by_location(
+            location, metric=args.metric)
+
+    return pretty_location, fcast
+
+
+def daily_forecast_by_zip_code(args):
+    zip_code = "".join(args.location)
+
+    fcast = forecast.daily_forecast_by_zip_code(
+            zip_code, metric=args.metric)
+
+    pretty_location = zip_code
+    return pretty_location, fcast
+
+
+def daily_forecast_by_lat_lon(args):
+    lat, lon = args.location
+
+    fcast = forecast.daily_forecast_by_lat_lon(
+            lat, lon, metric=args.metric)
+
+    pretty_location = ', '.join([lat, lon])
+    return pretty_location, fcast
+
+
+def args_overrides(args):
+    """Perform any argument overrides."""
+    if not sys.stdout.isatty():
+        args.color = False
+
+
+def main():
+    parser = make_parser()
+    args = parser.parse_args()
+    args_overrides(args)
+
+    if not utils.all_numbers(args.location):
+        # Args not being all numbers implies we were passed a string location
+        forecast_func = daily_forecast_by_location
+    elif len(args.location) == 1:
+        # All numbers with one argument implies zip code
+        forecast_func = daily_forecast_by_zip_code
+    elif len(args.location) == 2:
+        # 3 args that are all numbers implies lat lon coordinates
+        forecast_func = daily_forecast_by_lat_lon
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+    with utils.die_on(exceptions.NOAAException):
+        pretty_location, fcast = forecast_func(args)
+
+    if args.heading:
+        print "Forecast for %s" % pretty_location
+
+    for datapoint in fcast:
+        print datapoint.date.strftime('%a'),
+        print format_conditions(datapoint.conditions, color=args.color),
+        print format_temp(datapoint.min_temp, color=args.color),
+        print format_temp(datapoint.max_temp, color=args.color),
+        print simple_temp_graph(datapoint.max_temp, color=args.color)
+
+
+if __name__ == "__main__":
+    main()
